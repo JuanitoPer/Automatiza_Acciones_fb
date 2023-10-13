@@ -82,7 +82,7 @@ def execute_reactions(link, like, love, importa):
 
         # Formatea la hora actual como una cadena de texto
         hora_formateada = hora_actual.strftime("%H:%M:%S")
-        print("LINK: " + link + " SOLO_LIKES: " + str(repetitions) + " Hora: " + hora_formateada)
+        print("LINK: " + link + " REACCIONES " + str(repetitions) + " Hora: " + hora_formateada)
 
 
 
