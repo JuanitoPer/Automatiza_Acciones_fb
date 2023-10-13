@@ -42,8 +42,9 @@ def start_execution():
         time.sleep(.2)
         pyautogui.press('delete')
         time.sleep(.2)  
-        pyautogui.typewrite(link)
-        time.sleep(2)
+        pyperclip.copy(link)
+        pyautogui.hotkey('ctrl', 'v')
+        time.sleep(.2)
         pyautogui.press('enter')
         time.sleep(.1)
         pyautogui.hotkey('ctrl', 'pagedown')
@@ -57,12 +58,12 @@ def start_execution():
     for _ in range(repetitions):
         # Activa el atajo para copiar la URL actual en la barra de direcciones (Ctrl + L y luego Ctrl + C)
         pyautogui.hotkey('ctrl', 'shift', 'pageup')
-        time.sleep(.3)
+        time.sleep(.2)
         pyautogui.click(barra)
         pyautogui.hotkey('ctrl', 'l')
-        time.sleep(.3)
+        
         pyautogui.hotkey('ctrl', 'c')
-        time.sleep(.4)
+        time.sleep(.2)
 
         # Obtén la URL copiada del portapapeles utilizando Pyperclip
         copied_url = pyperclip.paste()
@@ -86,17 +87,6 @@ def start_execution():
         if reinicio:
             reinicio = False
             continue
-
-        # ... Tu código posterior ...
-
-    
-        # Obtén la hora actual
-        hora_actual = datetime.datetime.now()
-
-        # Formatea la hora actual como una cadena de texto
-        hora_formateada = hora_actual.strftime("%H:%M:%S")
-        print("LINK: " + link + " COMENTARIOS: " + str(repetitions) + " Hora: " + hora_formateada)
-
 
 
     time.sleep(1)

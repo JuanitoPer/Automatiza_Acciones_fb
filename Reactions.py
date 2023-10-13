@@ -25,7 +25,8 @@ def execute_reactions(link, like, love, importa):
         time.sleep(.2)
         pyautogui.press('delete')
         time.sleep(.2)
-        pyautogui.typewrite(link)
+        pyperclip.copy(link)
+        pyautogui.hotkey('ctrl', 'v')
         time.sleep(.3)
         pyautogui.press('enter')
         time.sleep(.1)
@@ -77,14 +78,7 @@ def execute_reactions(link, like, love, importa):
 
     
     
-        # Obtén la hora actual
-        hora_actual = datetime.datetime.now()
-
-        # Formatea la hora actual como una cadena de texto
-        hora_formateada = hora_actual.strftime("%H:%M:%S")
-        print("LINK: " + link + " REACCIONES " + str(repetitions) + " Hora: " + hora_formateada)
-
-
+       
 
 
 

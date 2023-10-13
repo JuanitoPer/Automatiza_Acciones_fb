@@ -54,8 +54,9 @@ class PopupWindow:
             time.sleep(.2)
             pyautogui.press("delete")
             time.sleep(.2)
-            pyautogui.write(link)
-            time.sleep(2)
+            pyperclip.copy(link)
+            pyautogui.hotkey('ctrl', 'v')
+            time.sleep(.2)
             pyautogui.press('enter')
             time.sleep(.2)
             # Cambiar de pestaña
@@ -73,9 +74,9 @@ class PopupWindow:
             pyautogui.hotkey('ctrl', 'shift', 'pageup')
             time.sleep(.2)
             pyautogui.click(caja)
-            time.sleep(.2)
+            
             pyautogui.hotkey('ctrl', 'l')
-            time.sleep(.2)
+            
             pyautogui.hotkey('ctrl', 'c')
             time.sleep(.2)
 

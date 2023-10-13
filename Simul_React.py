@@ -8,8 +8,8 @@ import datetime
 
 
 
-#barra = (1213, 68)
-barra = (1363, 466)
+barra = (1213, 68)
+
 caja_Equis = (236, 424)
 
 
@@ -31,7 +31,8 @@ def execute_reactions(rows):
             time.sleep(.2)
             pyautogui.press('delete')
             time.sleep(.2)
-            pyautogui.typewrite(link)
+            pyperclip.copy(link)
+            pyautogui.hotkey('ctrl', 'v')
             time.sleep(2)
             pyautogui.press('enter')
             time.sleep(.1)
