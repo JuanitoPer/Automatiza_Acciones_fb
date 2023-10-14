@@ -73,13 +73,7 @@ def execute_reactions(rows):
         pyautogui.hotkey('ctrl', 'pagedown')
 
 
-        
-        # Obtén la hora actual
-        hora_actual = datetime.datetime.now()
 
-        # Formatea la hora actual como una cadena de texto
-        hora_formateada = hora_actual.strftime("%H:%M:%S")
-        print("LINK: " + link + " SOLO_LIKES: " + str(comment_count) + " Hora: " + hora_formateada)
 # Función para mostrar un cuadro de diálogo de confirmación
 def confirm_execution():
     result = messagebox.askyesno("Confirmación", "¿Deseas ejecutar las acciones?")

@@ -24,7 +24,7 @@ def execute_reactions(rows):
         # Ciclo para pegar el mismo enlace el número de veces correspondiente
         for _ in range(repetitions):
             # Pegar el enlace de la fila actual
-            time.sleep(1)
+            time.sleep(.1)
             pyautogui.click(barra)
             time.sleep(.2)
             #pyautogui.hotkey('ctrl', 'a')
@@ -33,11 +33,11 @@ def execute_reactions(rows):
             time.sleep(.2)
             pyperclip.copy(link)
             pyautogui.hotkey('ctrl', 'v')
-            time.sleep(2)
+            time.sleep(.1)
             pyautogui.press('enter')
             time.sleep(.1)
             pyautogui.hotkey('ctrl', 'pagedown')
-            time.sleep(2)  # Espera entre iteraciones
+            time.sleep(1)  # Espera entre iteraciones
         # Resto de tu código para ejecutar reacciones
 
 
@@ -52,7 +52,7 @@ def execute_reactions(rows):
             time.sleep(.2)
             pyautogui.click(barra)
             time.sleep(.2)
-            #pyautogui.hotkey('ctrl', 'l')
+            pyautogui.hotkey('ctrl', 'l')
             time.sleep(.2)
             pyautogui.hotkey('ctrl', 'c')
             time.sleep(.2)
@@ -82,13 +82,7 @@ def execute_reactions(rows):
 
             
             
-            # Obtén la hora actual
-            hora_actual = datetime.datetime.now()
-
-            # Formatea la hora actual como una cadena de texto
-            hora_formateada = hora_actual.strftime("%H:%M:%S")
-            print("LINK: " + link + " Simul_React: " + str(repetitions) + " Hora: " + hora_formateada)
-
+            
 
 
 
