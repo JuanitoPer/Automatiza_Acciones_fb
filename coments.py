@@ -38,7 +38,7 @@ def start_execution():
         time.sleep(.1)
         pyautogui.click(barra)
         time.sleep(.2)
-        #pyautogui.hotkey('ctrl', 'a')
+        pyautogui.hotkey('ctrl', 'a')
         time.sleep(.2)
         pyautogui.press('delete')
         time.sleep(.2)  

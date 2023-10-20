@@ -18,8 +18,9 @@ time.sleep(1)
 # Función para ejecutar las acciones de las reacciones
 def execute_reactions(rows):
     for row in rows:
-        link, like, love, importa = row[0], row[1], row[2], row[3]
-        repetitions = int(like) + int(love) + int(importa)
+
+        link, like, love, importa, asombra, risa, enoja  = row[0], row[1], row[2], row[3], row[4], row[5], row[6]
+        repetitions = int(like) + int(love) + int(importa) + int(asombra) + int(risa) + int(enoja) 
         
         # Ciclo para pegar el mismo enlace el número de veces correspondiente
         for _ in range(repetitions):
@@ -27,7 +28,7 @@ def execute_reactions(rows):
             time.sleep(.1)
             pyautogui.click(barra)
             time.sleep(.2)
-            #pyautogui.hotkey('ctrl', 'a')
+            pyautogui.hotkey('ctrl', 'a')
             time.sleep(.2)
             pyautogui.press('delete')
             time.sleep(.2)
@@ -150,8 +151,58 @@ def execute_reactions(rows):
 
 
 
+
+
+
+        time.sleep(.2)
+        # Bucle para el "me importa"
+        for _ in range(int(risa)):
+            time.sleep(.2)
+            pyautogui.click(caja_Equis)
+            
+            #Accediendi a la reaccion
+            for i in range(5):
+                pyautogui.hotkey('tab')
+                time.sleep(.2)
+            pyautogui.press('enter')
+            time.sleep(.2)
+            pyautogui.hotkey('ctrl', 'pagedown')
+
+
+
+        time.sleep(.2)
+        # Bucle para el "me importa"
+        for _ in range(int(asombra)):
+            time.sleep(.2)
+            pyautogui.click(caja_Equis)
+            
+            #Accediendi a la reaccion
+            for i in range(6):
+                pyautogui.hotkey('tab')
+                time.sleep(.2)
+            pyautogui.press('enter')
+            time.sleep(.2)
+            pyautogui.hotkey('ctrl', 'pagedown')
+
             pass  # Reemplaza "pass" con las acciones que deseas hacer
 
+
+
+
+
+        time.sleep(.2)
+        # Bucle para el "me importa"
+        for _ in range(int(enoja)):
+            time.sleep(.2)
+            pyautogui.click(caja_Equis)
+            
+            #Accediendi a la reaccion
+            for i in range(8):
+                pyautogui.hotkey('tab')
+                time.sleep(.2)
+            pyautogui.press('enter')
+            time.sleep(.2)
+            pyautogui.hotkey('ctrl', 'pagedown')
 
 
 
