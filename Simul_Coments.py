@@ -30,17 +30,55 @@ def execute_reactions(rows):
             time.sleep(.2)
             pyautogui.press('delete')
             time.sleep(.2)
-            pyautogui.typewrite(link)
-            time.sleep(2)
+            pyperclip.copy(link)
+            time.sleep(.1)
+            pyautogui.hotkey('ctrl', 'v')
+            time.sleep(.1)
             pyautogui.press('enter')
             time.sleep(.1)
             pyautogui.hotkey('ctrl', 'pagedown')
-            time.sleep(2)  # Espera entre iteraciones
+            time.sleep(1)  # Espera entre iteraciones
+
+        
+        # Etiqueta para el bucle exterior
+        reinicio = False
 
         # Ciclo para acceder a la posición inicial
-        for _ in range(comment_count):
+        for _ in range(repetitions):
+            # Activa el atajo para copiar la URL actual en la barra de direcciones (Ctrl + L y luego Ctrl + C)
             pyautogui.hotkey('ctrl', 'shift', 'pageup')
             time.sleep(.2)
+            pyautogui.click(barra)
+            time.sleep(.2)
+            pyautogui.hotkey('ctrl', 'l')
+            time.sleep(.2)
+            pyautogui.hotkey('ctrl', 'c')
+            time.sleep(.2)
+
+            # Obtén la URL copiada del portapapeles utilizando Pyperclip
+            copied_url = pyperclip.paste()
+
+            # Realiza acciones con la URL copiada
+            # Por ejemplo, compara la URL con otra y toma acciones en consecuencia
+            if link in copied_url:
+                # La URL coincide con lo que buscas, establece la etiqueta 'reinicio' en True
+                reinicio = True
+                continue
+            else:
+                print("----Se eliminó " + copied_url + "----")
+                
+                # La URL no coincide, cierra la pestaña actual (Ctrl + W)
+                pyautogui.hotkey('ctrl', 'w')
+                repetitions -= 1
+                time.sleep(.2)
+
+            # Si la etiqueta 'reinicio' es True, continúa con la siguiente repetición
+            if reinicio:
+                reinicio = False
+                continue
+
+                #para hacer la reaccion para cada reaccion hay que hacer una condicional que verifique el numero de reacciones en cada input y lo ejecute y si no que avance a la siguiente reaccion
+
 
         # Pegar todos los comentarios de la fila actual
         for comment in comments:
@@ -70,7 +108,7 @@ def execute_reactions(rows):
             pyautogui.hotkey('ctrl', 'pagedown')
             time.sleep(2)
 
-        pyautogui.hotkey('ctrl', 'pagedown')
+        print("--- " + str(comment_count)+ " Reacciones---")
 
 
 

@@ -52,7 +52,7 @@ def start_execution():
 
 
     reinicio = False
-    # ... Tu código previo ...
+    
 
     # Ciclo para acceder a la posición inicial
     for _ in range(repetitions):
@@ -80,9 +80,9 @@ def start_execution():
             
             # La URL no coincide, cierra la pestaña actual (Ctrl + W)
             pyautogui.hotkey('ctrl', 'w')
+            repetitions -= 1
             time.sleep(1)
-            repetitions -= 1  # Resta 1 a la variable 'repetitions'
-
+            
         # Si la etiqueta 'reinicio' es True, continúa con la siguiente repetición
         if reinicio:
             reinicio = False
@@ -122,9 +122,11 @@ def start_execution():
         time.sleep(.2)
 
         pyautogui.hotkey('ctrl', 'pagedown')
-        time.sleep(2)
+        time.sleep(1)
 
-
+        
+        
+    print("--- " + str(repetitions)+ " Comentarios---")
 
 
 # Create the main window

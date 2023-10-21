@@ -67,6 +67,7 @@ def execute_reactions(link, like, love, importa):
             
             # La URL no coincide, cierra la pestaña actual (Ctrl + W)
             pyautogui.hotkey('ctrl', 'w')
+            repetitions -= 1
             time.sleep(.2)
 
         # Si la etiqueta 'reinicio' es True, continúa con la siguiente repetición
@@ -151,6 +152,7 @@ def execute_reactions(link, like, love, importa):
 
 
 
+    print("--- " + str(repetitions)+ " Reacciones---")
 
 
 def submit_values():

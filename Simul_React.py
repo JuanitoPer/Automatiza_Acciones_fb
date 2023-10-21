@@ -7,8 +7,8 @@ import pyperclip
 import datetime
 
 
-
 barra = (1213, 68)
+#barra = (1263, 466)
 
 caja_Equis = (236, 424)
 
@@ -42,7 +42,7 @@ def execute_reactions(rows):
         # Resto de tu código para ejecutar reacciones
 
 
-        time.sleep(1)
+        time.sleep(.4)
         # Etiqueta para el bucle exterior
         reinicio = False
 
@@ -72,6 +72,7 @@ def execute_reactions(rows):
                 
                 # La URL no coincide, cierra la pestaña actual (Ctrl + W)
                 pyautogui.hotkey('ctrl', 'w')
+                repetitions -= 1
                 time.sleep(.2)
 
             # Si la etiqueta 'reinicio' es True, continúa con la siguiente repetición
@@ -204,6 +205,7 @@ def execute_reactions(rows):
             time.sleep(.2)
             pyautogui.hotkey('ctrl', 'pagedown')
 
+        print("--- " + str(repetitions)+ " Reacciones---")
 
 
 
