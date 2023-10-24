@@ -6,8 +6,10 @@ import csv
 import random
 
 
+#barra = (1302, 291)
 
 #barra = (1302, 291)
+
 # Define las coordenadas de los elementos en la pantalla
 barra = (1230, 403)
 caja_Equis = (156, 320)
@@ -27,16 +29,20 @@ def abrir_pagina_usuarios(url):
     pyautogui.hotkey('ctrl', 'pagedown')
     time.sleep(1)
 
+
+
+
 # Función para pegar comentario y ruta de archivo
 def pegar_comentario_y_ruta(comentarios, ruta):
     tab_interval = .3  # Intervalo entre pulsaciones de tabulación
 
     # Seleccionar un comentario aleatorio de la fila
     # Selecciona uno de los comentarios 
-    comentario_aleatorio = random.choice(comentarios[0:6])  
+    comentario_aleatorio = random.choice(comentarios[0:3])  
     
 
     pyautogui.click(caja_Equis)
+
     time.sleep(tab_interval)
     # Pulsar tabulaciones para llegar a la ubicación adecuada
     for _ in range(3):
@@ -87,14 +93,16 @@ def start_execution():
     for _ in range(num_repeticiones):
         time.sleep(1)
         abrir_pagina_usuarios(url)
-        
 
+            
+        # Imprime la ruta y el comentario que se utilizó
+    for linea in lineas_csv:
+        ruta = linea[0].strip()
+        comentarios = linea[1:]
+        comentario_aleatorio = random.choice(comentarios[0:3])
 
-
-
-
-
-
+        print("Ruta: '{}'" .format(ruta))
+        print("Comentario: '{}'".format(comentario_aleatorio))
 
 
 
@@ -148,8 +156,7 @@ def start_execution():
     procesar_usuario(lineas_csv)
 
     #Hay que revisar este print
-    print("--- " + str(num_repeticiones)+ " Comentarios---")
-
+    
 
 
 
