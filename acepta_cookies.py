@@ -11,14 +11,16 @@ acepta_cookie = (1651, 883)
 cierra_grupo = (126, 249)
 abre_grupo = (100, 296)
 
-t.sleep(3)
+t.sleep(30)
 
 #recorre para aceptar
 t.sleep(.5)
 for i in range(recorrido_grupos):
 
     for i in range(recorrido_gral):
-        t.sleep(5)
+        t.sleep(
+            
+        )
         pyautogui.click(acepta_cookie)
         t.sleep(1)
         pyautogui.press("esc")

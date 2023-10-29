@@ -44,7 +44,7 @@ def execute_reactions(rows):
         reinicio = False
 
         # Ciclo para acceder a la posición inicial
-        for _ in range(repetitions):
+        for _ in range(comment_count):
             # Activa el atajo para copiar la URL actual en la barra de direcciones (Ctrl + L y luego Ctrl + C)
             pyautogui.hotkey('ctrl', 'shift', 'pageup')
             time.sleep(.2)
@@ -69,7 +69,7 @@ def execute_reactions(rows):
                 
                 # La URL no coincide, cierra la pestaña actual (Ctrl + W)
                 pyautogui.hotkey('ctrl', 'w')
-                repetitions -= 1
+                comment_count -= 1
                 time.sleep(.2)
 
             # Si la etiqueta 'reinicio' es True, continúa con la siguiente repetición
@@ -108,7 +108,7 @@ def execute_reactions(rows):
             pyautogui.hotkey('ctrl', 'pagedown')
             time.sleep(2)
 
-        print("--- " + str(comment_count)+ " Reacciones---")
+        print("--- " + str(comment_count)+ " Comentarios---")
 
 
 

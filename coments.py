@@ -124,7 +124,8 @@ def start_execution():
         pyautogui.hotkey('ctrl', 'pagedown')
         time.sleep(1)
 
-        
+       
+
         
     print("--- " + str(repetitions)+ " Comentarios---")
 

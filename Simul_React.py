@@ -13,7 +13,7 @@ barra = (1213, 68)
 caja_Equis = (236, 424)
 
 
-time.sleep(1)
+time.sleep(3)
 
 # Función para ejecutar las acciones de las reacciones
 def execute_reactions(rows):
@@ -25,7 +25,7 @@ def execute_reactions(rows):
         # Ciclo para pegar el mismo enlace el número de veces correspondiente
         for _ in range(repetitions):
             # Pegar el enlace de la fila actual
-            time.sleep(.1)
+            time.sleep(.3)
             pyautogui.click(barra)
             time.sleep(.2)
             pyautogui.hotkey('ctrl', 'a')
