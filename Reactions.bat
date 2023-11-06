@@ -1,1 +1,0 @@
-py C:\Users\alber\Desktop\Cuentas_Masivas\1\Generales\Reactions.py
