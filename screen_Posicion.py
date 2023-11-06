@@ -1,7 +1,10 @@
 import pyautogui
 import time 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> nueva
 # Obtener la posición actual del puntero
 
 time.sleep(5)       
